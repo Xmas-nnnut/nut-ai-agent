@@ -1,9 +1,11 @@
 spring:
   application:
     name: nut-ai-agent
+  profiles:
+    active: local
   ai:
     dashscope:
-      api-key: sk-4c29a2299e8c4924b514861b90f4f036
+      api-key: your-api-key
       chat:
         options:
           model: qwen-plus
