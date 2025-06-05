@@ -21,34 +21,28 @@ public class PgVectorVectorStoreConfig {
     private LoveAppDocumentLoader loveAppDocumentLoader;
 
     /**
-     *     vectorstore:
-     *       pgvector:
-     *         index-type: HNSW
-     *         dimensions: 1536
-     *         distance-type: COSINE_DISTANCE
-     *         max-document-batch-size: 10000 # Optional: Maximum number of documents per batch
      *
      * @param jdbcTemplate
      * @param dashscopeEmbeddingModel
      * @return
      */
-    @Bean
-    public VectorStore pgVectorVectorStore(JdbcTemplate jdbcTemplate, EmbeddingModel dashscopeEmbeddingModel) {
-        VectorStore vectorStore = PgVectorStore.builder(jdbcTemplate, dashscopeEmbeddingModel)
-                .dimensions(1536)                    // Optional: defaults to model dimensions or 1536
-                .distanceType(COSINE_DISTANCE)       // Optional: defaults to COSINE_DISTANCE
-                .indexType(HNSW)                     // Optional: defaults to HNSW
-                .initializeSchema(true)              // Optional: defaults to false
-                .schemaName("public")                // Optional: defaults to "public"
-                .vectorTableName("vector_store")     // Optional: defaults to "vector_store"
-                .maxDocumentBatchSize(10000)         // Optional: defaults to 10000
-                .build();
-
-        // 加载文档
-        List<Document> documents = loveAppDocumentLoader.loadMarkdowns();
-        vectorStore.add(documents);
-        return vectorStore;
-    }
+//    @Bean
+//    public VectorStore pgVectorVectorStore(JdbcTemplate jdbcTemplate, EmbeddingModel dashscopeEmbeddingModel) {
+//        VectorStore vectorStore = PgVectorStore.builder(jdbcTemplate, dashscopeEmbeddingModel)
+//                .dimensions(1536)                    // Optional: defaults to model dimensions or 1536
+//                .distanceType(COSINE_DISTANCE)       // Optional: defaults to COSINE_DISTANCE
+//                .indexType(HNSW)                     // Optional: defaults to HNSW
+//                .initializeSchema(true)              // Optional: defaults to false
+//                .schemaName("public")                // Optional: defaults to "public"
+//                .vectorTableName("vector_store")     // Optional: defaults to "vector_store"
+//                .maxDocumentBatchSize(10000)         // Optional: defaults to 10000
+//                .build();
+//
+//        // 加载文档
+//        List<Document> documents = loveAppDocumentLoader.loadMarkdowns();
+//        vectorStore.add(documents);
+//        return vectorStore;
+//    }
 
 }
 
