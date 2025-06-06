@@ -21,15 +21,15 @@ import static org.springframework.ai.vectorstore.pgvector.PgVectorStore.PgIndexT
 @Configuration
 public class PgVectorVectorStoreConfig {
 
-    @Resource
-    private LoveAppDocumentLoader loveAppDocumentLoader;
-
-    /**
-     *
-     * @param jdbcTemplate
-     * @param dashscopeEmbeddingModel
-     * @return
-     */
+//    @Resource
+//    private LoveAppDocumentLoader loveAppDocumentLoader;
+//
+//    /**
+//     *
+//     * @param jdbcTemplate
+//     * @param dashscopeEmbeddingModel
+//     * @return
+//     */
 //    @Bean
 //    public VectorStore pgVectorVectorStore(JdbcTemplate jdbcTemplate, EmbeddingModel dashscopeEmbeddingModel) {
 //        VectorStore vectorStore = PgVectorStore.builder(jdbcTemplate, dashscopeEmbeddingModel)
