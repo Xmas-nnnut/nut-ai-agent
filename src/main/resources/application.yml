@@ -11,9 +11,12 @@ spring:
           model: qwen-plus
     mcp:
       client:
-        stdio:
-          servers-configuration: classpath:mcp-servers.json
-
+        sse:
+          connections:
+            server1:
+              url: http://localhost:8127
+#        stdio:
+#          servers-configuration: classpath:mcp-servers.json
 server:
   port: 8123
   servlet:
@@ -37,4 +40,8 @@ knife4j:
     language: zh_cn
 # searchAPI
 search-api:
-  api-key: 114514
+  api-key: your-api-key
+# 修改日志级别，查看 Spring AI 更多调用细节
+logging:
+  level:
+    org.springframework.ai: DEBUG
