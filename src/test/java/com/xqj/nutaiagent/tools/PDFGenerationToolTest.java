@@ -60,4 +60,37 @@ public class PDFGenerationToolTest {
         assertNotNull(result);
         assertTrue(result.contains("PDF generated successfully from Markdown"));
     }
+
+    @Test
+    public void testGeneratePDFFromMarkdownWithImages() {
+        PDFGenerationTool tool = new PDFGenerationTool();
+        String fileName = "test-markdown-images.pdf";
+        String markdownContent = """
+                # 包含图片的Markdown测试
+                
+                这是一个包含图片的Markdown文档示例。
+                
+                ## 本地图片
+                
+                下面是一个本地图片（如果存在的话）：
+                
+                ![浪漫餐厅](romantic_bistro.jpg)
+                
+                ## 图片说明
+                
+                上面的图片应该能正确显示在PDF中。如果图片文件存在于 tmp/file/ 目录下，它应该能被正确加载。
+                
+                ### 测试内容
+                
+                - 图片路径解析
+                - 基础URI设置
+                - PDF中的图片显示
+                
+                如果看到这段文字但没有看到图片，说明图片文件不存在或路径有问题。
+                """;
+        
+        String result = tool.generatePDF(fileName, markdownContent);
+        assertNotNull(result);
+        assertTrue(result.contains("PDF generated successfully from Markdown"));
+    }
 }
