@@ -82,7 +82,6 @@
             <artifactId>spring-ai-mcp-client-spring-boot-starter</artifactId>
             <version>1.0.0-M6</version>
         </dependency>
-
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
@@ -125,7 +124,6 @@
             <artifactId>html2pdf</artifactId>
             <version>6.1.0</version>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/com.itextpdf/font-asian -->
         <dependency>
             <groupId>com.itextpdf</groupId>
@@ -133,7 +131,6 @@
             <version>9.1.0</version>
             <scope>test</scope>
         </dependency>
-        
         <!-- CommonMark for Markdown parsing -->
         <dependency>
             <groupId>org.commonmark</groupId>
